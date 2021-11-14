@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { useCustomTheme } from "../../themes"
+import React from 'react'
+import styled from 'styled-components'
+import { useCustomTheme } from '../../themes'
 
 const NavWrapper = styled.div`
     nav {
@@ -12,6 +12,9 @@ const NavWrapper = styled.div`
 `
 const NavBar: React.FC = () => {
     const { switchTheme, setSwitchTheme } = useCustomTheme()
+    const handleSwitchTheme = React.useCallback(() => {
+        setSwitchTheme(!switchTheme)
+    }, [switchTheme, setSwitchTheme])
     return (
         <NavWrapper>
             <nav>
@@ -29,9 +32,7 @@ const NavBar: React.FC = () => {
                     </a>
                     <ul className="right hide-on-med-and-down">
                         <li>
-                            <a onClick={() => setSwitchTheme(!switchTheme)}>
-                                THEME
-                            </a>
+                            <a onClick={handleSwitchTheme}>THEME</a>
                         </li>
                         <li>
                             <a href="badges.html">Components</a>

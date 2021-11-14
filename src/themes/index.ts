@@ -1,8 +1,8 @@
-import GlobalStyle from "./GlobalStyles"
+import GlobalStyle from './GlobalStyles'
 import {
     CustomThemeContext,
     CustomThemeProvider,
     useCustomTheme,
-} from "./CustomThemeProvider"
+} from './CustomThemeProvider'
 
 export { GlobalStyle, CustomThemeContext, CustomThemeProvider, useCustomTheme }

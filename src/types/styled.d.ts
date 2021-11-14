@@ -1,10 +1,10 @@
-import "styled-components"
+import 'styled-components'
 
-import { defaultTheme } from "../themes"
+import { defaultTheme } from '../themes'
 
 export type RootTheme = typeof defaultTheme
 
-declare module "styled-components" {
+declare module 'styled-components' {
     export interface DefaultTheme extends RootTheme {
         isDark: boolean
         colors: {

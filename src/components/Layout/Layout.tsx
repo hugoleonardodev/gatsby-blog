@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import NavBar from "../NavBar"
-import SideNav from "../SideNav"
-import Footer from "../Footer"
+import NavBar from '../NavBar'
+import SideNav from '../SideNav'
+import Footer from '../Footer'
 
 const Layout: React.FC = ({ children }) => {
     return (

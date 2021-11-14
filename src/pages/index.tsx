@@ -1,8 +1,11 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import { ImageFormat, StaticImage } from 'gatsby-plugin-image'
 
-import Seo from "../components/SEO"
+import Seo from '../components/SEO'
+
+const formats: ImageFormat[] = ['auto', 'webp', 'avif']
+const styles = { marginBottom: '1.45rem' }
 
 const IndexPage: React.FC = () => (
     <>
@@ -14,12 +17,12 @@ const IndexPage: React.FC = () => (
             src="../images/gatsby-astronaut.png"
             width={300}
             quality={95}
-            formats={["auto", "webp", "avif"]}
+            formats={formats}
             alt="A Gatsby astronaut"
-            style={{ marginBottom: `1.45rem` }}
+            style={styles}
         />
         <p>
-            <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
+            <Link to="/using-typescript/">Go to &quot;Using TypeScript&quot;</Link> <br />
         </p>
     </>
 )

@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import * as React from 'react'
 
 export interface CustomHTMLProps {
     htmlAttributes: React.HtmlHTMLAttributes<HTMLHtmlElement>
@@ -24,6 +24,10 @@ const HTML: React.FC<CustomHTMLProps> = ({
     body,
     postBodyComponents,
 }) => {
+    const getNewBody = React.useCallback(() => {
+        const newBody = { __html: body }
+        return newBody
+    }, [body])
     return (
         <html {...htmlAttributes}>
             <head>
@@ -58,9 +62,9 @@ const HTML: React.FC<CustomHTMLProps> = ({
                 {preBodyComponents}
                 {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
                 <div
-                    key={`body`}
+                    key={'body'}
                     id="___gatsby"
-                    dangerouslySetInnerHTML={{ __html: body }}
+                    dangerouslySetInnerHTML={getNewBody()}
                 />
                 {postBodyComponents}
                 {/* JavaScript at end of body for optimized loading */}

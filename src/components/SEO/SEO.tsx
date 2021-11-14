@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import { Helmet, HelmetProps } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react'
+import { Helmet, HelmetProps } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type SEOProperties = {
     lang?: string
@@ -28,7 +28,7 @@ type UrlProperties = {
 
 const SEO: React.FC<SEOProperties> = ({
     description,
-    lang = "en",
+    lang = 'en',
     meta = [],
     title,
 }) => {
@@ -49,44 +49,50 @@ const SEO: React.FC<SEOProperties> = ({
     const metaDescription = description || site.siteMetadata.description
     const defaultTitle = title || site.siteMetadata.title
 
+
+    const getHtmlAttributes = React.useCallback(() => {
+        const htmlAttributes = {
+            lang,
+        }
+        return htmlAttributes
+    }, [lang])
+
     return (
         <Helmet
-            htmlAttributes={{
-                lang,
-            }}
+            htmlAttributes={getHtmlAttributes()}
             title={title}
             titleTemplate={defaultTitle && `%s | ${defaultTitle}`}
             meta={[
                 {
-                    name: `description`,
+                    name: 'description',
                     content: metaDescription,
                 },
                 {
-                    property: `og:title`,
+                    property: 'og:title',
                     content: title,
                 },
                 {
-                    property: `og:description`,
+                    property: 'og:description',
                     content: metaDescription,
                 },
                 {
-                    property: `og:type`,
-                    content: `website`,
+                    property: 'og:type',
+                    content: 'website',
                 },
                 {
-                    name: `twitter:card`,
-                    content: `summary`,
+                    name: 'twitter:card',
+                    content: 'summary',
                 },
                 {
-                    name: `twitter:creator`,
-                    content: site.siteMetadata.author || ``,
+                    name: 'twitter:creator',
+                    content: site.siteMetadata.author || '',
                 },
                 {
-                    name: `twitter:title`,
+                    name: 'twitter:title',
                     content: title,
                 },
                 {
-                    name: `twitter:description`,
+                    name: 'twitter:description',
                     content: metaDescription,
                 },
             ].concat(meta)}
