@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 import React from "react"
-
 import { CustomThemeProvider, GlobalStyle } from "./src/themes"
 
 import Layout from "./src/components/Layout"

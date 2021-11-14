@@ -28,6 +28,7 @@ const HTML: React.FC<CustomHTMLProps> = ({
         const newBody = { __html: body }
         return newBody
     }, [body])
+
     return (
         <html {...htmlAttributes}>
             <head>
@@ -60,7 +61,6 @@ const HTML: React.FC<CustomHTMLProps> = ({
             </head>
             <body {...bodyAttributes}>
                 {preBodyComponents}
-                {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
                 <div
                     key={'body'}
                     id="___gatsby"
