@@ -7,7 +7,7 @@ function startAllSideNavsInstances() {
         // load and DOMContentLoaded returns empty arrays, so a time out is need for waiting the elements to apper on document
         window.setTimeout(() => {
             return startAllSideNavsInstances()
-        }, 300)
+        }, 200)
     } else {
         var sideNavInstances = M.Sidenav.init(allSideNavs)
     }
