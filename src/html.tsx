@@ -6,7 +6,6 @@
  */
 
 import * as React from "react"
-import Layout from "./components/Layout"
 
 export interface CustomHTMLProps {
     htmlAttributes: React.HtmlHTMLAttributes<HTMLHtmlElement>
@@ -58,13 +57,11 @@ const HTML: React.FC<CustomHTMLProps> = ({
             <body {...bodyAttributes}>
                 {preBodyComponents}
                 {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
-                <Layout>
-                    <div
-                        key={`body`}
-                        id="___gatsby"
-                        dangerouslySetInnerHTML={{ __html: body }}
-                    />
-                </Layout>
+                <div
+                    key={`body`}
+                    id="___gatsby"
+                    dangerouslySetInnerHTML={{ __html: body }}
+                />
                 {postBodyComponents}
                 {/* JavaScript at end of body for optimized loading */}
                 <script

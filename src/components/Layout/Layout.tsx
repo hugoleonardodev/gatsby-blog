@@ -7,10 +7,10 @@ import Footer from "../Footer"
 const Layout: React.FC = ({ children }) => {
     return (
         <>
-            <SideNav />
             <header>
                 <NavBar />
             </header>
+            <SideNav />
             <main>{children}</main>
             <Footer />
         </>

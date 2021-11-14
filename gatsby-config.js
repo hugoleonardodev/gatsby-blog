@@ -14,47 +14,6 @@ module.exports = {
                 // Add any options here
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-sass`,
-        //     options: {
-        //         implementation: require(`node-sass`),
-        //         postCssPlugins: [
-        //             require(`postcss-preset-env`),
-        //             require(`autoprefixer`),
-        //             require(`postcss-nested`),
-        //         ],
-        //         sassOptions: {
-        //             precision: 6,
-        //         },
-        //     },
-        // },
-        // {
-        //     resolve: `gatsby-plugin-postcss`,
-        //     options: {
-        //         postCssPlugins: [require(`postcss-preset-env`)],
-        //     },
-        // },
-        // {
-        //     resolve: `gatsby-plugin-purgecss`,
-        //     options: {
-        //         printRejected: true, // Print removed selectors and processed file names
-        //         // develop: true, // Enable while using `gatsby develop`
-        //         // tailwind: true, // Enable tailwindcss support
-        //         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        //         // purgeOnly: [
-        //         //     "components/",
-        //         //     "/commons.css",
-        //         //     "/bootstrap.css",
-        //         //     "bootstrap/dist/css/bootstrap.css",
-        //         //     "bootstrap/",
-        //         // ], // Purge only these files/folders
-        //         purgeCSSOptions: {
-        //             // https://purgecss.com/configuration.html#options
-        //             // safelist: ['safelist'], // Don't remove this selector
-        //         },
-        //         // More options defined here https://purgecss.com/configuration.html#options
-        //     },
-        // },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
