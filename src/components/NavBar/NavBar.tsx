@@ -23,7 +23,7 @@ const NavBar: React.FC = () => {
                         Logo
                     </a>
                     <a
-                        // href="#"
+                        href="#!"
                         data-target="mobile-demo"
                         className="sidenav-trigger"
                         // onClick={toggle}
@@ -32,7 +32,9 @@ const NavBar: React.FC = () => {
                     </a>
                     <ul className="right hide-on-med-and-down">
                         <li>
-                            <a onClick={handleSwitchTheme}>THEME</a>
+                            <a href="#!" onClick={handleSwitchTheme}>
+                                THEME
+                            </a>
                         </li>
                         <li>
                             <a href="badges.html">Components</a>

@@ -5,16 +5,32 @@
  */
 
 // You can delete this file if you're not using it
-import React from "react"
-import { CustomThemeProvider, GlobalStyle } from "./src/themes"
+import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
 
-import Layout from "./src/components/Layout"
+import * as Headings from './src/components/Headings'
+import Blockquote from './src/components/BlockQuote'
+import Code from './src/components/Code'
+import PrismSetup from './src/components/PrismSetup'
+import Layout from './src/components/Layout'
+
+import { CustomThemeProvider, GlobalStyle } from './src/themes'
+
+const components = {
+    h2: Headings.myH2,
+    h4: Headings.myH3,
+    inlineCode: Code,
+    blockquote: Blockquote,
+    pre: PrismSetup,
+}
 
 export const wrapRootElement = ({ element }) => {
     return (
         <CustomThemeProvider>
             <GlobalStyle />
-            <Layout>{element}</Layout>
+            <MDXProvider components={components}>
+                <Layout>{element}</Layout>
+            </MDXProvider>
         </CustomThemeProvider>
     )
 }

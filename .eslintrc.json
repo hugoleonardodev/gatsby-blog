@@ -6,6 +6,7 @@
     },
     "extends": [
         "eslint:recommended",
+        "react-app",
         "plugin:react/recommended",
         "plugin:react-perf/recommended",
         "plugin:react-hooks/recommended"
@@ -23,11 +24,10 @@
         "eslint-plugin-react",
         "eslint-plugin-react-hooks",
         "eslint-plugin-react-perf",
-        "eslint-plugin-react-hooks",
         "eslint-plugin-import"
     ],
     "rules": {
-        "indent": ["error", 4],
-        "quotes": [2, "single"]
+        // "indent": ["error", 4],
+        // "quotes": [2, "single"]
     }
 }

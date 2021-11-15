@@ -22,7 +22,10 @@ const IndexPage: React.FC = () => (
             style={styles}
         />
         <p>
-            <Link to="/using-typescript/">Go to &quot;Using TypeScript&quot;</Link> <br />
+            <Link to="/using-typescript/">
+                Go to &quot;Using TypeScript&quot;
+            </Link>{' '}
+            <br />
         </p>
     </>
 )

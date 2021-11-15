@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const NotFoundPage: React.FC = () => (
-    <section className="error-page">
+    <section>
         <div className="page-center">
             <span>404</span>
             <h3>Sorry, the page you tried cannot be found.</h3>
