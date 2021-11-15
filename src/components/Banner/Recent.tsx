@@ -2,27 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
-import {
-    GatsbyImage,
-    getImage,
-    GatsbyImageProps,
-    IGatsbyImageData,
-    ImageDataLike,
-    StaticImage,
-} from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
 import Title from './Title'
-import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks'
 
 type PostProps = {
     frontmatter: {
         title: string
         date: Date
         slug: string
-        // image: {
-        //     childImageSharp: {
-        //         gatsbyImageData: ImageDataLike | FileNode
-        //     }
-        // }
         image: ImageDataLike
     }
     id: string
@@ -53,19 +40,6 @@ const query = graphql`
         }
     }
 `
-
-// const DefaultImage: React.FC = () => {
-//     return (
-//         <GatsbyImage
-//             image="../images/gatsby-icon.png"
-//             alt="Default"
-//             placeholder="blurred"
-//             layout="fixed"
-//             width={200}
-//             height={200}
-//         />
-//     )
-// }
 
 const Recent = () => {
     const {

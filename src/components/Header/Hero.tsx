@@ -7,7 +7,7 @@ type HeroProps = {
 }
 const Hero: React.FC<HeroProps> = ({ showPerson }) => {
     return (
-        <header className="hero">
+        <section className="hero">
             {showPerson && (
                 <StaticImage
                     src="../assets/person.png"
@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ showPerson }) => {
                     alt="person typing"
                 />
             )}
-        </header>
+        </section>
     )
 }
 

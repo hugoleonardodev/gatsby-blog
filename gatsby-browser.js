@@ -8,20 +8,24 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 
-import * as Headings from './src/components/Headings'
-import Blockquote from './src/components/BlockQuote'
-import Code from './src/components/Code'
-import PrismSetup from './src/components/PrismSetup'
+import {
+    Blockquote,
+    Code,
+    PrismWrapper,
+    myH2,
+    myH3,
+} from './src/components/Code'
+
 import Layout from './src/components/Layout'
 
 import { CustomThemeProvider, GlobalStyle } from './src/themes'
 
 const components = {
-    h2: Headings.myH2,
-    h4: Headings.myH3,
+    h2: myH2,
+    h4: myH3,
     inlineCode: Code,
     blockquote: Blockquote,
-    pre: PrismSetup,
+    pre: PrismWrapper,
 }
 
 export const wrapRootElement = ({ element }) => {

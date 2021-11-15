@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-type LinksProps = {
-    styleClass: string
-}
+// type LinksProps = {
+//     styleClass: string
+// }
 
-const Links: React.FC<LinksProps> = ({ styleClass, children }) => {
+const Links: React.FC = () => {
     return (
-        <ul className={styleClass}>
+        <>
             <li>
                 <Link to="/" className="page-link">
                     Home
@@ -17,7 +17,6 @@ const Links: React.FC<LinksProps> = ({ styleClass, children }) => {
                 <Link to="/posts" className="page-link">
                     Posts
                 </Link>
-                {children}
             </li>
             <li>
                 <Link to="/newsletter" className="page-link">
@@ -29,7 +28,7 @@ const Links: React.FC<LinksProps> = ({ styleClass, children }) => {
                     Post
                 </Link>
             </li>
-        </ul>
+        </>
     )
 }
 

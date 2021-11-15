@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/prop-types */
 import React from 'react'
-import Hero from '../components/Hero'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 
@@ -14,12 +13,7 @@ const CategoryTemplate = props => {
     const {
         pageContext: { category },
     } = props
-    return (
-        <>
-            <Hero />
-            <Posts posts={posts} title={`category / ${category}`} />
-        </>
-    )
+    return <Posts posts={posts} title={`category / ${category}`} />
 }
 
 export const query = graphql`

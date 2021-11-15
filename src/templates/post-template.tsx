@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/prop-types */
 import React from 'react'
-import Hero from '../components/Hero'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Banner from '../components/Banner'
@@ -17,7 +16,6 @@ const PostTemplate = ({ data }) => {
 
     return (
         <>
-            <Hero />
             <Wrapper>
                 {/* post info */}
                 <article>

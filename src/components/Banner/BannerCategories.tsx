@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Categories from '../Categories'
+import Categories from './Categories'
 import Title from './Title'
+
 const BannerCategories = () => {
     return (
         <Wrapper>
@@ -10,6 +11,7 @@ const BannerCategories = () => {
         </Wrapper>
     )
 }
+
 const Wrapper = styled.div`
     .category {
         font-size: 1rem;

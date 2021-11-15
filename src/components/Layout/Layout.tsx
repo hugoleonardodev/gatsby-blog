@@ -1,18 +1,16 @@
 import React from 'react'
 
-import NavBar from '../NavBar'
-import SideNav from '../SideNav'
 import Footer from '../Footer'
+import Header from '../Header'
 
 const Layout: React.FC = ({ children }) => {
     return (
         <>
-            <header>
-                <NavBar />
-            </header>
-            <SideNav />
+            <Header />
             <main>{children}</main>
-            <Footer />
+            <footer className="page-footer">
+                <Footer />
+            </footer>
         </>
     )
 }

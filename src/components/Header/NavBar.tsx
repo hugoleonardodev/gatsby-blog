@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useCustomTheme } from '../../themes'
+import Links from './Links'
 
 const NavWrapper = styled.div`
     nav {
@@ -36,15 +37,7 @@ const NavBar: React.FC = () => {
                                 THEME
                             </a>
                         </li>
-                        <li>
-                            <a href="badges.html">Components</a>
-                        </li>
-                        <li>
-                            <a href="collapsible.html">Javascript</a>
-                        </li>
-                        <li>
-                            <a href="mobile.html">Mobile</a>
-                        </li>
+                        <Links />
                     </ul>
                 </div>
             </nav>
