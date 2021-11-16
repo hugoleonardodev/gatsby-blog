@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
-import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import {
+    GatsbyImage,
+    getImage,
+    ImageDataLike,
+    getImageData,
+} from 'gatsby-plugin-image'
+
 import Title from './Title'
 
 type PostProps = {
@@ -54,7 +59,17 @@ const Recent = () => {
                 return (
                     <Link to={`/posts/${slug}`} key={post.id} className="post">
                         <GatsbyImage
-                            image={getImage(image)}
+                            image={
+                                getImage(image) ||
+                                getImageData({
+                                    baseUrl: '../../images/gatsby-icon.png',
+                                    sourceWidth: 512,
+                                    sourceHeight: 512,
+                                    urlBuilder: () =>
+                                        '../../images/gatsby-icon.png',
+                                    formats: ['auto', 'webp', 'avif'],
+                                })
+                            }
                             alt={title}
                             className="img"
                         />

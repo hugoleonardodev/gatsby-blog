@@ -1,8 +1,13 @@
 import React from 'react'
-import Post from './Post'
+import Post, { PostProps } from './Post'
 import Banner from '../Banner'
 
-const Posts = ({ posts, title }) => {
+type PostsProps = {
+    posts: PostProps[]
+    title: string
+}
+
+const Posts: React.FC<PostsProps> = ({ posts, title }) => {
     return (
         <section className="posts">
             <h3 className="posts-title">{title}</h3>

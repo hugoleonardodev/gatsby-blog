@@ -1,18 +1,31 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/prop-types */
 import React from 'react'
-import Posts from '../components/Posts'
+import { Posts } from '../components/Layouts'
 import { graphql } from 'gatsby'
+import { PostProps } from '../components/Layouts/Post'
 
-const CategoryTemplate = props => {
+type CategoryTemplateProps = {
+    data: {
+        categories: {
+            nodes: PostProps[]
+        }
+    }
+    pageContext: {
+        category: string
+    }
+}
+
+const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
+    data,
+    pageContext,
+}) => {
     const {
-        data: {
-            categories: { nodes: posts },
-        },
-    } = props
-    const {
-        pageContext: { category },
-    } = props
+        categories: { nodes: posts },
+    } = data
+
+    const { category } = pageContext
+
     return <Posts posts={posts} title={`category / ${category}`} />
 }
 

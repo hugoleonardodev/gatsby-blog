@@ -2,11 +2,34 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+    GatsbyImage,
+    getImage,
+    getImageData,
+    ImageDataLike,
+} from 'gatsby-plugin-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-const PostTemplate = ({ data }) => {
+
+type PostTemplateProps = {
+    data: {
+        mdx: {
+            frontmatter: {
+                title: string
+                date: Date
+                slug: string
+                image: ImageDataLike
+                category: string
+                readTime: Date
+                embeddedImages: ImageDataLike[]
+            }
+            body: string
+        }
+    }
+}
+
+const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
     const {
         mdx: {
             frontmatter: { title, category, image, date, embeddedImages },
@@ -20,7 +43,17 @@ const PostTemplate = ({ data }) => {
                 {/* post info */}
                 <article>
                     <GatsbyImage
-                        image={getImage(image)}
+                        image={
+                            getImage(image) ||
+                            getImageData({
+                                baseUrl: '../../images/gatsby-icon.png',
+                                sourceWidth: 512,
+                                sourceHeight: 512,
+                                urlBuilder: () =>
+                                    '../../images/gatsby-icon.png',
+                                formats: ['auto', 'webp', 'avif'],
+                            })
+                        }
                         alt={title}
                         className="main-img"
                     />

@@ -3,7 +3,7 @@ import React from 'react'
 import Footer from '../Footer'
 import Header from '../Header'
 
-const Layout: React.FC = ({ children }) => {
+const App: React.FC = ({ children }) => {
     return (
         <>
             <Header />
@@ -15,4 +15,4 @@ const Layout: React.FC = ({ children }) => {
     )
 }
 
-export default Layout
+export default App

@@ -16,7 +16,7 @@ import {
     myH3,
 } from './src/components/Code'
 
-import Layout from './src/components/Layout'
+import { App } from './src/components/Layouts'
 
 import { CustomThemeProvider, GlobalStyle } from './src/themes'
 
@@ -33,7 +33,7 @@ export const wrapRootElement = ({ element }) => {
         <CustomThemeProvider>
             <GlobalStyle />
             <MDXProvider components={components}>
-                <Layout>{element}</Layout>
+                <App>{element}</App>
             </MDXProvider>
         </CustomThemeProvider>
     )

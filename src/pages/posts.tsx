@@ -1,7 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Posts from '../components/Posts'
-const PostsPage: React.FC = ({ data }) => {
+import { Posts } from '../components/Layouts'
+import { PostProps } from '../components/Layouts/Post'
+
+type PostsPageProps = {
+    data: {
+        allMdx: {
+            nodes: PostProps[]
+        }
+    }
+}
+
+const PostsPage: React.FC<PostsPageProps> = ({ data }) => {
     const {
         allMdx: { nodes: posts },
     } = data
